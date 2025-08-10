@@ -10,19 +10,19 @@ def main(page: ft.Page):
     header = ft.Container(
         content=ft.Stack([
             ft.Container(
-                ft.Image(src="logo.png", width=200, height=200),
+                ft.Image(src="logo.png", width=220, height=220),
                 alignment=ft.alignment.center_left,
                 expand=True
             ),
         
             ft.Container(
-                ft.Text("Sistema de Recargas", size=50, color="black", font_family="Poppins", weight="bold"),
+                ft.Text("Sistema de Recargas", size=60, color="black", font_family="Poppins", weight="bold"),
                 alignment=ft.alignment.center,
                 expand=True
             ),
                 
             ft.Container(
-                ft.Text(strftime("%H:%M %p"), color="#B00020", weight="bold", size=30),
+                ft.Text(strftime("%H:%M %p"), color="#B00020", weight="bold", size=40),
                 alignment=ft.alignment.center_right,
                 expand=True,
                 padding=30
@@ -30,7 +30,7 @@ def main(page: ft.Page):
         ]),
         bgcolor="white",
         padding=15,
-        height=150,
+        height=175,
         border_radius=ft.border_radius.only(top_left=10, top_right=10),
     )
 
@@ -38,13 +38,13 @@ def main(page: ft.Page):
         content=ft.Column([
             ft.Container(
                 content=ft.Stack([
-                    
-                    ft.Image(src="card.png", width=300, height=300),
-                                      
+
+                    ft.Image(src="card.png", width=450, height=450),
+
                     ft.Container(
-                        ft.Text("Saldo Actual:", size=40, color="black", weight="bold"),
-                        left=350,
-                        top=40   
+                        ft.Text("Saldo Actual:", size=50, color="black", weight="bold"),
+                        left=480,
+                        top=55
                     ),
                 ]),
                 width=950, 
@@ -57,11 +57,11 @@ def main(page: ft.Page):
             ft.Container(
                 ft.Row([
                     ft.Image(src="time.gif", width=60, height=60),
-                    ft.Text("Esperando tarjeta", size=40, color="black", weight="bold"),
+                    ft.Text("Esperando tarjeta", size=50, color="black", weight="bold"),
                 ], alignment=ft.MainAxisAlignment.CENTER),
                 alignment=ft.alignment.center,
                 bgcolor="#f2f2f3", 
-                height=85,
+                height=100,
                 border_radius=5,  
             ),
         ],
@@ -70,22 +70,21 @@ def main(page: ft.Page):
         bgcolor="white",
         border_radius=10,
         padding=20,
-        height=485
+        height=650
     )
     
     right_panel = ft.Container(
         content=ft.Column([
             ft.Container(
-                ft.Image(src="señal.gif", width=300, height=300),
-                
+                ft.Image(src="seÃ±al.gif", width=450, height=450),
                 alignment=ft.alignment.center,
                 padding=25
             ),
             ft.Container(
-                ft.Text("Posicione su tarjeta\nMetrox en el sensor", size=40, color="#B00020", weight="bold"),
+                ft.Text("Posicione su tarjeta\nMetrox en el sensor", size=50, color="#B00020", weight="bold"),
                 alignment=ft.alignment.center,
                 bgcolor="#f2f2f3",
-                height=80,
+                height=70,
                 border_radius=5,
                 expand=True
             ),
@@ -97,14 +96,14 @@ def main(page: ft.Page):
         padding=20
     )
 
-    # 🔷 Fila principal: saldo + historial
+    # ðŸ”· Fila principal: saldo + historial
     middle_section = ft.Row(
     controls=[
-        # ⬅️ Columna izquierda: left_panel + monedas
+        # â¬…ï¸ Columna izquierda: left_panel + monedas
         ft.Column([
             left_panel,
             ft.Row(
-                controls=[ft.Image(src="coins.png", width=500, height=500)],
+                controls=[ft.Image(src="coins.png", width=550, height=550)],
                 expand=True,
                 alignment=ft.MainAxisAlignment.CENTER,
             )
@@ -112,7 +111,7 @@ def main(page: ft.Page):
         expand=True 
         ),
 
-        # ➡️ Columna derecha: solo right_panel
+        # âž¡ï¸ Columna derecha: solo right_panel
         ft.Column([
             right_panel,
         ],
@@ -122,7 +121,7 @@ def main(page: ft.Page):
     expand=True
     )
     
-    # 📦 Estructura vertical
+    # ðŸ“¦ Estructura vertical
     page.add(
         ft.Column(
             controls=[
@@ -134,5 +133,6 @@ def main(page: ft.Page):
     )
 
 ft.app(main)
+
 
 
